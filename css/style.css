@@ -1,0 +1,525 @@
+/* poppins-regular - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../fonts/poppins-v15-latin-regular.woff2") format("woff2"), url("../fonts/poppins-v15-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../fonts/poppins-v15-latin-600.woff2") format("woff2"), url("../fonts/poppins-v15-latin-600.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* poppins-700 - latin */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../fonts/poppins-v15-latin-700.woff2") format("woff2"), url("../fonts/poppins-v15-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*variables*/
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+*::before {
+  box-sizing: inherit;
+}
+*::after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper-one {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.wrapper-two {
+  max-width: 891px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: normal;
+  color: #000000;
+}
+
+p {
+  text-align: center;
+  vertical-align: top;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 38px;
+  font-style: bold;
+  line-height: 57px;
+  letter-spacing: 0.95px;
+}
+
+/*Header part*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.container {
+  background-image: linear-gradient(rgba(51, 51, 51, 0.9), rgba(27, 27, 27, 0.4692), rgba(0, 0, 0, 0.0001));
+}
+
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  height: 24px;
+  padding: 4px 3px;
+}
+.top-bar p {
+  flex: 1;
+  font-weight: 600;
+}
+.top-bar .our-stores {
+  font-size: 10px;
+  line-height: 15px;
+  vertical-align: top;
+  letter-spacing: 0.08px;
+  text-align: right;
+  padding-right: 24px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.top-bar img {
+  width: 8px;
+  height: 11.12px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.main-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px 24px 24px;
+}
+.main-bar .input-container {
+  display: flex;
+  flex-direction: row;
+}
+.main-bar .header-search {
+  padding: 10px 35px 10px 15px;
+  outline: none;
+  width: 584px;
+  height: 48px;
+  border-radius: 3px;
+  opacity: 24%;
+  border: none;
+  background-position: right;
+}
+.main-bar .header-search::-moz-placeholder {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  line-height: 100%;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 0.8px;
+  color: red;
+  opacity: 1;
+}
+.main-bar .header-search:-ms-input-placeholder {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  line-height: 100%;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 0.8px;
+  color: red;
+  opacity: 1;
+}
+.main-bar .header-search::placeholder {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  line-height: 100%;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 0.8px;
+  color: red;
+  opacity: 1;
+}
+.main-bar button {
+  width: 94px;
+  height: 32px;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: top;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.main-bar .search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -76px;
+  padding-top: 16px;
+}
+.main-bar .search-button img {
+  width: 16px;
+  height: 16px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main-bar .sign-bar a {
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 17px;
+  text-decoration: none;
+  top: -5px;
+  margin-right: 17px;
+  position: relative;
+}
+.main-bar .basket {
+  width: 16px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.burger {
+  display: none;
+}
+
+.header-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.header-list .header-item {
+  margin-right: 32px;
+}
+.header-list .header-item .header-link {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  /* Don't work
+  offset: 0px 2px;
+  text-shadow: 4px rgba(0, 0, 0, 0.12); */
+}
+.header-list .header-item a {
+  position: relative;
+}
+.header-list .header-item a::after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1.8px;
+  background-color: transparent;
+}
+.header-list .header-item a:hover::after {
+  background-color: #000000;
+}
+
+/*Main part*/
+.intro {
+  height: 657px;
+  background-image: url(../img/9193579.png);
+  background-repeat: no-repeat;
+  background-position: top 24px right;
+  background-size: cover;
+}
+.intro .intro-title {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  font-size: 60px;
+  line-height: 90px;
+  text-align: center;
+  vertical-align: top;
+}
+.intro .intro-title::-webkit-scrollbar {
+  display: none;
+}
+
+.register-part {
+  padding-top: 32px;
+  text-align: center;
+}
+.register-part p {
+  height: 36px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.87px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+.register-part input {
+  height: 32px;
+  width: 334px;
+  margin-bottom: 32px;
+  margin-right: 12px;
+}
+.register-part:hover {
+  border-color: #000000;
+}
+.register-part::-moz-placeholder {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 8px;
+  left: 11px;
+}
+.register-part:-ms-input-placeholder {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 8px;
+  left: 11px;
+}
+.register-part::placeholder {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 8px;
+  left: 11px;
+}
+.register-part button {
+  width: 94px;
+  height: 32px;
+  border-radius: 3px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: top;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.register-part button:hover {
+  background-color: #726969;
+  opacity: 70%;
+}
+
+/*Footer part*/
+#footer {
+  background-color: #F7F7F7;
+  padding-top: 26px;
+  padding-bottom: 14px;
+}
+#footer h2 {
+  font-family: "Cormorant Garamond";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 1.16px;
+  margin-bottom: 17px;
+}
+#footer .ft-main {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  margin-bottom: 38px;
+}
+#footer .ft-main .ft-main-list {
+  text-align: left;
+  vertical-align: top;
+}
+#footer .ft-main .ft-main-list li {
+  margin-bottom: 6px;
+}
+#footer .ft-main .ft-main-list a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 12px;
+  line-height: 19px;
+  letter-spacing: 0.1px;
+}
+#footer .ft-main .ft-main-list a {
+  position: relative;
+}
+#footer .ft-main .ft-main-list a::after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1.8px;
+  background-color: transparent;
+}
+#footer .ft-main .ft-main-list a:hover::after {
+  background-color: #000000;
+}
+#footer .ft-social-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+#footer .ft-social-list img {
+  width: 16px;
+  height: 16px;
+  margin-right: 16px;
+}
+#footer .ft-social-list a:hover::after {
+  background-color: transparent;
+}
+#footer .ft-legal {
+  text-align: center;
+  font-size: 9px;
+  line-height: 14px;
+  vertical-align: top;
+  letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 767px) {
+  .top-bar, .basket-card, .header-search, .intro-title, .ft-title {
+    display: none;
+  }
+
+  .intro {
+    background-position: center;
+  }
+
+  .burger {
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 15px;
+  }
+  .burger:before {
+    content: "";
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    top: 0;
+  }
+  .burger:after {
+    content: "";
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+  }
+  .burger span {
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    left: 0;
+    top: 6px;
+  }
+}/*# sourceMappingURL=style.css.map */
