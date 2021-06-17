@@ -113,6 +113,10 @@ body {
   color: #000000;
 }
 
+.logo {
+  display: none;
+}
+
 p {
   text-align: center;
   vertical-align: top;
@@ -482,8 +486,12 @@ header {
 }
 
 @media screen and (max-width: 767px) {
-  .top-bar, .basket-card, .header-search, .intro-title, .ft-title {
+  .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1 {
     display: none;
+  }
+
+  .logo {
+    display: block;
   }
 
   .intro {
@@ -492,9 +500,11 @@ header {
 
   .burger {
     display: block;
-    position: relative;
+    position: absolute;
     width: 20px;
     height: 15px;
+    top: 22px;
+    left: 16px;
   }
   .burger:before {
     content: "";
@@ -521,5 +531,13 @@ header {
     height: 3px;
     left: 0;
     top: 6px;
+  }
+
+  .main-bar .search-button {
+    margin: 0;
+    padding: 0;
+  }
+  .main-bar button {
+    width: 80px;
   }
 }/*# sourceMappingURL=style.css.map */

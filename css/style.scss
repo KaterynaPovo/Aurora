@@ -45,6 +45,10 @@ body {
     color: $color-black;
 }
 
+.logo {
+    display: none;
+}
+
 p {
     text-align: center;
     vertical-align: top;
@@ -415,8 +419,12 @@ header {
 //For mobile screen
 
 @media screen and (max-width: 767px) {
-    .top-bar, .basket-card, .header-search, .intro-title, .ft-title {
+    .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1 {
         display: none;
+    }
+
+    .logo {
+        display: block;
     }
 
     .intro {
@@ -425,9 +433,11 @@ header {
 
     .burger {
         display: block;
-        position: relative;
+        position: absolute;
         width: 20px;
         height: 15px;
+        top: 22px;
+        left: 16px;
         &:before {
             content: '';
             background-color: $color-white;
@@ -456,8 +466,14 @@ header {
         }
     }
 
-    .header-nav {
-        
+    .main-bar {
+        .search-button {
+            margin: 0;
+            padding: 0;
+        }
+        button {
+            width: 80px;
+        }
     }
 
 }
