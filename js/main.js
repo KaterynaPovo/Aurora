@@ -7,3 +7,10 @@
 //       } else $(".header-nav").show();
 //     });
 //   });
+
+$(document).ready(function() {
+    $('.burger').click(function() {
+        $('.burger,.header-nav,.logo img,.main-bar').toggleClass('active');
+    });
+});
+
