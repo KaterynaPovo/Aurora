@@ -133,16 +133,11 @@ h1 {
   letter-spacing: 0.95px;
 }
 
-/*Header part*/
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-}
-
-.container {
-  background-image: linear-gradient(rgba(51, 51, 51, 0.9), rgba(27, 27, 27, 0.4692), rgba(0, 0, 0, 0.0001));
 }
 
 .top-bar {
@@ -153,11 +148,16 @@ header {
   height: 24px;
   padding: 4px 3px;
 }
-.top-bar p {
+.top-bar .top-bar-text {
   flex: 1;
   font-weight: 600;
+  text-align: center;
+  vertical-align: top;
+  font-size: 11px;
+  line-height: 17px;
+  color: #000000;
 }
-.top-bar .our-stores {
+.top-bar .our-stores-link {
   font-size: 10px;
   line-height: 15px;
   vertical-align: top;
@@ -181,9 +181,26 @@ header {
   align-items: center;
   padding: 16px 24px 24px 24px;
 }
+.main-bar:after {
+  content: "";
+  background-image: linear-gradient(rgba(51, 51, 51, 0.9), rgba(27, 27, 27, 0.4692), rgba(0, 0, 0, 0.0001));
+  opacity: 24%;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  left: 0;
+}
+.main-bar .main-logo a {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 38px;
+  font-style: bold;
+  line-height: 57px;
+  letter-spacing: 0.95px;
+  text-decoration: none;
+}
 .main-bar .input-container {
-  display: flex;
-  flex-direction: row;
+  position: relative;
 }
 .main-bar .header-search {
   padding: 10px 35px 10px 15px;
@@ -191,9 +208,10 @@ header {
   width: 584px;
   height: 48px;
   border-radius: 3px;
-  opacity: 24%;
   border: none;
   background-position: right;
+  color: #FFFFFF;
+  background-color: rgba(247, 247, 247, 0.24);
 }
 .main-bar .header-search::-moz-placeholder {
   font-weight: 500;
@@ -203,7 +221,7 @@ header {
   text-align: left;
   vertical-align: top;
   letter-spacing: 0.8px;
-  color: red;
+  color: #FFFFFF;
   opacity: 1;
 }
 .main-bar .header-search:-ms-input-placeholder {
@@ -214,7 +232,7 @@ header {
   text-align: left;
   vertical-align: top;
   letter-spacing: 0.8px;
-  color: red;
+  color: #FFFFFF;
   opacity: 1;
 }
 .main-bar .header-search::placeholder {
@@ -225,30 +243,56 @@ header {
   text-align: left;
   vertical-align: top;
   letter-spacing: 0.8px;
-  color: red;
+  color: #FFFFFF;
   opacity: 1;
 }
-.main-bar button {
-  width: 94px;
-  height: 32px;
-  border-radius: 3px;
-  background-color: black;
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-  line-height: 20px;
-  text-align: center;
+.main-bar .header-search::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  line-height: 100%;
+  text-align: left;
   vertical-align: top;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
+  letter-spacing: 0.8px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.main-bar .header-search:-ms-input-placeholder {
+  /* IE 10+ */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  line-height: 100%;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 0.8px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+.main-bar .header-search:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  line-height: 100%;
+  text-align: left;
+  vertical-align: top;
+  letter-spacing: 0.8px;
+  color: #FFFFFF;
+  opacity: 1;
 }
 .main-bar .search-button {
   background: transparent;
   border: none;
   outline: none;
-  margin-left: -76px;
-  padding-top: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 .main-bar .search-button img {
   width: 16px;
@@ -256,7 +300,13 @@ header {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.main-bar .sign-bar a {
+.main-bar .sign-bar .sign-bar-list {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.main-bar a {
   font-weight: 600;
   color: #FFFFFF;
   letter-spacing: 1px;
@@ -267,6 +317,9 @@ header {
   top: -5px;
   margin-right: 17px;
   position: relative;
+}
+.main-bar .sign-bar-img {
+  top: -10px;
 }
 .main-bar .basket {
   width: 16px;
@@ -295,9 +348,6 @@ header {
   text-decoration: none;
   letter-spacing: 1px;
   text-transform: uppercase;
-  /* Don't work
-  offset: 0px 2px;
-  text-shadow: 4px rgba(0, 0, 0, 0.12); */
 }
 .header-list .header-item a {
   position: relative;
@@ -317,25 +367,37 @@ header {
 
 /*Main part*/
 .intro {
-  height: 657px;
+  height: 100vh;
   background-image: url(../img/9193579.png);
   background-repeat: no-repeat;
   background-position: top 24px right;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation: slideBg 10s linear infinite 7s;
+          animation: slideBg 10s linear infinite 7s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 .intro .intro-title {
-  position: absolute;
-  top: 40%;
-  left: 25%;
   font-size: 60px;
   line-height: 90px;
-  text-align: center;
-  vertical-align: top;
-}
-.intro .intro-title::-webkit-scrollbar {
-  display: none;
 }
 
+@-webkit-keyframes slideBg {
+  50% {
+    background-image: url(../img/hp-oh-hi.png);
+  }
+}
+
+@keyframes slideBg {
+  50% {
+    background-image: url(../img/hp-oh-hi.png);
+  }
+}
 .register-part {
   padding-top: 32px;
   text-align: center;
@@ -354,44 +416,86 @@ header {
   margin-bottom: 32px;
   margin-right: 12px;
 }
+.register-part input::-moz-placeholder {
+  /* Chrome/Opera/Safari */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+.register-part input:-ms-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+.register-part input::placeholder {
+  /* Chrome/Opera/Safari */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+.register-part input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+.register-part input:-ms-input-placeholder {
+  /* IE 10+ */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
+.register-part input:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 17px;
+  text-align: left;
+  vertical-align: text-top;
+  letter-spacing: 0.8px;
+  color: #4A4A4A;
+  position: absolute;
+  top: 7px;
+  left: 11px;
+}
 .register-part:hover {
   border-color: #000000;
-}
-.register-part::-moz-placeholder {
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 17px;
-  text-align: left;
-  vertical-align: text-top;
-  letter-spacing: 0.8px;
-  color: #4A4A4A;
-  position: absolute;
-  top: 8px;
-  left: 11px;
-}
-.register-part:-ms-input-placeholder {
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 17px;
-  text-align: left;
-  vertical-align: text-top;
-  letter-spacing: 0.8px;
-  color: #4A4A4A;
-  position: absolute;
-  top: 8px;
-  left: 11px;
-}
-.register-part::placeholder {
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 17px;
-  text-align: left;
-  vertical-align: text-top;
-  letter-spacing: 0.8px;
-  color: #4A4A4A;
-  position: absolute;
-  top: 8px;
-  left: 11px;
 }
 .register-part button {
   width: 94px;
@@ -485,8 +589,120 @@ header {
   letter-spacing: 0.5px;
 }
 
+.container.active {
+  background-color: #FFFFFF;
+  padding-bottom: 15px;
+}
+
+.top-bar.active {
+  background-color: #F7F7F7;
+}
+
+.main-logo.active a {
+  color: #000000;
+}
+
+.sign-bar-link.active {
+  color: #000000;
+}
+
+.header-search.active {
+  color: #FFFFFF;
+  background-color: #F7F7F7;
+}
+.header-search.active::-moz-placeholder {
+  color: #000000;
+  opacity: 1;
+  font-weight: 600;
+}
+.header-search.active:-ms-input-placeholder {
+  color: #000000;
+  opacity: 1;
+  font-weight: 600;
+}
+.header-search.active::placeholder {
+  color: #000000;
+  opacity: 1;
+  font-weight: 600;
+}
+.header-search.active::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000000;
+  opacity: 1;
+  font-weight: 600;
+}
+.header-search.active:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #000000;
+  opacity: 1;
+  font-weight: 600;
+}
+.header-search.active:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000000;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.search-button.active {
+  color: #FFFFFF;
+}
+
+.sign-bar-link a {
+  top: -8px;
+}
+.sign-bar-link span {
+  height: 22px;
+  width: 22px;
+  background-color: #F2DA91;
+  display: block;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 11px;
+  vertical-align: center;
+}
+
+.header-list-active {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+.header-list-active .header-item-active {
+  margin-right: 32px;
+}
+.header-list-active .header-item-active .header-link-active {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.header-list-active .header-item-active a {
+  position: relative;
+}
+.header-list-active .header-item-active a::after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1.8px;
+  background-color: transparent;
+}
+.header-list-active .header-item-active a:hover::after {
+  background-color: #000000;
+}
+
+.intro.active {
+  background-image: url(../img/hp-oh-hi.png);
+}
+
 @media screen and (max-width: 767px) {
-  .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1 {
+  .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1, .sign-bar-link {
     display: none;
   }
 
@@ -555,7 +771,7 @@ header {
     background-color: #FFFFFF;
   }
 
-  .header-nav {
+  .header-nav, .header-nav-active {
     position: fixed;
     top: -150%;
     left: 0;
@@ -564,7 +780,7 @@ header {
     background-color: #FFFFFF;
   }
 
-  .header-nav.active {
+  .header-nav.active, .header-nav-active.active {
     top: 68px;
     transition: all 0.3s ease 0s;
     left: 0;
@@ -587,5 +803,19 @@ header {
   }
   .main-bar button {
     width: 80px;
+  }
+
+  .register-part {
+    padding: 24px 16px;
+  }
+  .register-part input {
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+  #footer .ft-main {
+    margin-bottom: 16px;
+  }
+  #footer .ft-social-list img {
+    margin-right: 24px;
   }
 }/*# sourceMappingURL=style.css.map */

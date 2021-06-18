@@ -65,7 +65,7 @@ h1 {
     letter-spacing: 0.95px;
 }
 
-/*Header part*/
+//Header part
 
 header {
     position: fixed;
@@ -74,11 +74,11 @@ header {
     width: 100%;
 }
 
-.container {
-    background-image: linear-gradient(rgba(51, 51, 51, 0.9),
-    rgba(27, 27, 27, 0.4692),
-    rgba(0, 0, 0, 0.0001));
-} 
+// .container {
+//     // background-image: linear-gradient(rgba(51, 51, 51, 0.9),
+//     // rgba(27, 27, 27, 0.4692),
+//     // rgba(0, 0, 0, 0.0001));
+// } 
 
 //Top bar part
 
@@ -90,12 +90,17 @@ header {
     height: 24px;
     padding: 4px 3px;
 
-    p {
+    .top-bar-text {
         flex: 1;
         font-weight: 600;
+        text-align: center;
+        vertical-align: top;
+        font-size: 11px;
+        line-height: 17px;
+        color: $color-black;
     }
 
-    .our-stores {
+    .our-stores-link {
         font-size: 10px;
         line-height: 15px;
         vertical-align: top;
@@ -121,10 +126,34 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px 24px 24px;
+    &:after {
+        content: '';
+        background-image: linear-gradient(rgba(51, 51, 51, 0.9),
+        rgba(27, 27, 27, 0.4692),
+        rgba(0, 0, 0, 0.0001));
+        opacity: 24%;
+        position: absolute;
+        top: 24px;
+        right: 0;
+        left: 0;
+        // height: 140px;
+        // z-index: 10;
+    }
+
+    .main-logo {
+        a {
+            color: $color-white;
+            font-weight: 700;
+            font-size: 38px;
+            font-style: bold;
+            line-height: 57px;
+            letter-spacing: 0.95px;
+            text-decoration: none;
+        }
+    }
 
     .input-container {
-        display: flex;
-        flex-direction: row;
+        position: relative;
     }
     .header-search {
         padding: 10px 35px 10px 15px;
@@ -132,9 +161,10 @@ header {
         width: 584px;
         height: 48px;
         border-radius: 3px;
-        opacity: 24%;
         border: none;
         background-position: right;
+        color:$color-white;
+        background-color: rgb(247 247 247 / 24%);
         &::placeholder {
             font-weight: 500;
             font-size: 11px;
@@ -143,32 +173,56 @@ header {
             text-align: left;
             vertical-align: top;
             letter-spacing: 0.8px;
-            color: red;
+            color: $color-white;
             opacity: 1;
         }
+        &::-moz-placeholder { /* Firefox 19+ */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
+          }
+        &:-ms-input-placeholder { /* IE 10+ */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
+          }
+        &:-moz-placeholder { /* Firefox 18- */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
+          }
     }
-
-    button {
-        width: 94px;
-        height: 32px;
-        border-radius: 3px;
-        background-color: black;
-        color: white;
-        font-size: 10px;
-        font-weight: 600;
-        line-height: 20px;
-        text-align: center;
-        vertical-align: top;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        cursor: pointer;
-    }
+    
     .search-button {
         background: transparent;
         border: none;
         outline: none;
-        margin-left: -76px;
-        padding-top: 16px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        
         img {
             width: 16px;
             height: 16px;
@@ -177,6 +231,12 @@ header {
     }
     
     .sign-bar
+        .sign-bar-list {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
         a {
             font-weight: 600;
             color: $color-white;
@@ -188,6 +248,10 @@ header {
             top: -5px;
             margin-right: 17px;
             position: relative;
+        }
+
+        .sign-bar-img {
+            top: -10px;
         }
         
         .basket {
@@ -219,9 +283,7 @@ header {
             text-decoration: none;
             letter-spacing: 1px;
             text-transform: uppercase;
-            /* Don't work
-            offset: 0px 2px;
-            text-shadow: 4px rgba(0, 0, 0, 0.12); */
+            
         }
         a {
             position: relative;
@@ -243,29 +305,34 @@ header {
     }  
 }
 
+
 /*Main part*/
 
 .intro {
-    height: 657px;
+    height: 100vh;
     background-image: url(../img/9193579.png);
     background-repeat:no-repeat;
     background-position: top 24px right;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    animation: slideBg 10s linear infinite 7s;
+    animation-timing-function: ease-in-out;
     .intro-title {
-        position: absolute;
-        top: 40%;
-        left: 25%;
-        // margin-top: -50px;
-        // margin-left: -50px;
         font-size: 60px;
         line-height: 90px;
-        text-align: center;
-        vertical-align: top;
-        &::-webkit-scrollbar {
-            display: none;
-        }
       }
 }
+
+@keyframes slideBg {
+    50% {
+        background-image: url(../img/hp-oh-hi.png);
+    }
+    
+}
+
 
 .register-part{
     padding-top: 32px;
@@ -283,23 +350,61 @@ header {
         width: 334px;
         margin-bottom: 32px;
         margin-right: 12px;
+
+        &::placeholder { /* Chrome/Opera/Safari */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            text-align: left;
+            vertical-align: text-top;
+            letter-spacing: 0.8px;
+            color: $color-gray;
+            position: absolute;
+            top: 7px;
+            left: 11px;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            text-align: left;
+            vertical-align: text-top;
+            letter-spacing: 0.8px;
+            color: $color-gray;
+            position: absolute;
+            top: 7px;
+            left: 11px;
+          }
+        &:-ms-input-placeholder { /* IE 10+ */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            text-align: left;
+            vertical-align: text-top;
+            letter-spacing: 0.8px;
+            color: $color-gray;
+            position: absolute;
+            top: 7px;
+            left: 11px;
+          }
+        &:-moz-placeholder { /* Firefox 18- */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            text-align: left;
+            vertical-align: text-top;
+            letter-spacing: 0.8px;
+            color: $color-gray;
+            position: absolute;
+            top: 7px;
+            left: 11px;
+          }
     }
 
     &:hover{
         border-color: $color-black;
     }
-    &::placeholder {
-		font-weight: 500;
-		font-size: 11px;
-		line-height: 17px;
-		text-align: left;
-		vertical-align: text-top;
-		letter-spacing: 0.8px;
-		color: $color-gray;
-		position: absolute;
-        top: 8px;
-        left: 11px;
-	}
+
     button {
         width: 94px;
         height: 32px;
@@ -382,21 +487,6 @@ header {
             height: 16px;
             margin-right: 16px;
         }
-        // &:hover {
-        //     .instagram {
-        //         color: #17BEBB;
-        //         -webkit-transform: scale(1.5);
-        //         -moz-transform: scale(1.5);
-        //         -ms-transform: scale(1.5);
-        //         -o-transform: scale(1.5);
-        //         transform: scale(1.5);
-        //         -webkit-transition: all 1s ease;
-        //         -moz-transition: all 1s ease;
-        //         -ms-transition: all 1s ease;
-        //         -o-transition: all 1s ease;
-        //         transition: all 1s ease;
-        //     }
-        // }
         a {
             &:hover {
                 &::after {
@@ -416,10 +506,126 @@ header {
     
 }
 
+//For the active page
+
+.container.active {
+    background-color: $color-white;
+    padding-bottom: 15px;
+}
+
+//Top bar part
+
+.top-bar.active {
+    background-color: $color-light-white;
+}
+
+//Main bar part
+
+.main-logo.active { 
+    a {
+        color: $color-black;
+    }
+}
+
+.sign-bar-link.active {
+    color: $color-black;
+}
+
+.header-search.active {
+    color:$color-white;
+    background-color: $color-light-white;
+    &::placeholder {
+        color: $color-black;
+        opacity: 1;
+        font-weight: 600;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color-black;
+        opacity: 1;
+        font-weight: 600;
+      }
+    &:-ms-input-placeholder { /* IE 10+ */
+        color: $color-black;
+        opacity: 1;
+        font-weight: 600;
+      }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color-black;
+        opacity: 1;
+        font-weight: 600;
+      }
+}
+
+.search-button.active {
+    color: $color-white;
+}
+
+.sign-bar-link {
+    a {
+        top: -8px;
+    }
+    
+    span {
+        height: 22px;
+        width: 22px;
+        background-color: #F2DA91;
+        display: block;
+        text-align: center;
+        border-radius: 50%;
+        font-weight: 600;
+        font-size: 11px;
+        vertical-align: center;
+    }
+}
+
+
+.header-list-active {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    .header-item-active {
+        margin-right: 32px;
+        .header-link-active {
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 20px;
+            color: $color-black;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            
+        }
+        a {
+            position: relative;
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: -3px;
+                left: 0;
+                right: 0;
+                height: 1.8px;
+                background-color: transparent;
+            }
+            &:hover {
+                &::after {
+                    background-color: $color-black;
+                }
+            }
+        }
+    }  
+}
+
+
+.intro.active {
+    background-image: url(../img/hp-oh-hi.png);
+}
+
+
 //For mobile screen
 
 @media screen and (max-width: 767px) {
-    .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1 {
+    .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1, .sign-bar-link {
         display: none;
     }
 
@@ -493,7 +699,7 @@ header {
         background-color: $color-white;
     }
 
-    .header-nav {
+    .header-nav, .header-nav-active {
         position: fixed;
         top: -150%;
         left: 0;
@@ -502,7 +708,7 @@ header {
         background-color: $color-white;  
     }
 
-    .header-nav.active {
+    .header-nav.active, .header-nav-active.active {
         top: 68px;
         transition: all 0.3s ease 0s;
         left: 0;
@@ -531,4 +737,31 @@ header {
             width: 80px;
         }
     }
+
+.register-part {
+    padding: 24px 16px; 
+    input {
+        
+        margin-bottom: 0;
+        margin-right: 8px;
+    }
+    button {
+        
+    }
+}
+
+
+
+
+#footer {
+    .ft-main {
+        margin-bottom: 16px;
+    }
+
+    .ft-social-list {
+        img {
+            margin-right: 24px;
+        }
+    }
+}
 }
