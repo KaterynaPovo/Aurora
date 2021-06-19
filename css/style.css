@@ -113,6 +113,11 @@ body {
   color: #000000;
 }
 
+.input-container-mobile,
+.submenu {
+  display: none;
+}
+
 .logo {
   display: none;
 }
@@ -387,17 +392,6 @@ header {
   line-height: 90px;
 }
 
-@-webkit-keyframes slideBg {
-  50% {
-    background-image: url(../img/hp-oh-hi.png);
-  }
-}
-
-@keyframes slideBg {
-  50% {
-    background-image: url(../img/hp-oh-hi.png);
-  }
-}
 .register-part {
   padding-top: 32px;
   text-align: center;
@@ -589,69 +583,66 @@ header {
   letter-spacing: 0.5px;
 }
 
-.container.active {
+.container.act {
   background-color: #FFFFFF;
   padding-bottom: 15px;
 }
 
-.top-bar.active {
+.top-bar.act {
   background-color: #F7F7F7;
 }
 
-.main-logo.active a {
+.main-logo.act a {
   color: #000000;
 }
 
-.sign-bar-link.active {
+.sign-bar-link.act {
   color: #000000;
 }
 
-.header-search.active {
+.header-search.act {
   color: #FFFFFF;
   background-color: #F7F7F7;
 }
-.header-search.active::-moz-placeholder {
+.header-search.act::-moz-placeholder {
   color: #000000;
   opacity: 1;
   font-weight: 600;
 }
-.header-search.active:-ms-input-placeholder {
+.header-search.act:-ms-input-placeholder {
   color: #000000;
   opacity: 1;
   font-weight: 600;
 }
-.header-search.active::placeholder {
+.header-search.act::placeholder {
   color: #000000;
   opacity: 1;
   font-weight: 600;
 }
-.header-search.active::-moz-placeholder {
+.header-search.act::-moz-placeholder {
   /* Firefox 19+ */
   color: #000000;
   opacity: 1;
   font-weight: 600;
 }
-.header-search.active:-ms-input-placeholder {
+.header-search.act:-ms-input-placeholder {
   /* IE 10+ */
   color: #000000;
   opacity: 1;
   font-weight: 600;
 }
-.header-search.active:-moz-placeholder {
+.header-search.act:-moz-placeholder {
   /* Firefox 18- */
   color: #000000;
   opacity: 1;
   font-weight: 600;
 }
 
-.search-button.active {
+.search-button.act {
   color: #FFFFFF;
 }
 
-.sign-bar-link a {
-  top: -8px;
-}
-.sign-bar-link span {
+.sign-bar-item span {
   height: 22px;
   width: 22px;
   background-color: #F2DA91;
@@ -661,18 +652,19 @@ header {
   font-weight: 600;
   font-size: 11px;
   vertical-align: center;
+  color: #000000;
 }
 
-.header-list-active {
+.header-list-act {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
 }
-.header-list-active .header-item-active {
+.header-list-act .header-item-act {
   margin-right: 32px;
 }
-.header-list-active .header-item-active .header-link-active {
+.header-list-act .header-item-act .header-link-act {
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
@@ -681,10 +673,10 @@ header {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.header-list-active .header-item-active a {
+.header-list-act .header-item-act a {
   position: relative;
 }
-.header-list-active .header-item-active a::after {
+.header-list-act .header-item-act a::after {
   position: absolute;
   content: "";
   bottom: -3px;
@@ -693,25 +685,48 @@ header {
   height: 1.8px;
   background-color: transparent;
 }
-.header-list-active .header-item-active a:hover::after {
+.header-list-act .header-item-act a:hover::after {
   background-color: #000000;
 }
 
-.intro.active {
+.intro.act {
   background-image: url(../img/hp-oh-hi.png);
 }
 
 @media screen and (max-width: 767px) {
-  .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1, .sign-bar-link {
+  .top-bar, .basket-card, .intro-title, .ft-main-social h2, .header-search, .main-bar h1, .sign-bar-link {
     display: none;
   }
 
-  .logo {
-    display: block;
+  .submenu {
+    display: inline;
   }
 
   .intro {
     background-position: center;
+  }
+
+  .main-bar .main-logo {
+    position: absolute;
+    left: 35%;
+  }
+  .main-bar .main-logo a {
+    font-size: 25px;
+    top: 0;
+  }
+  .main-bar .search-button {
+    margin: 0;
+    padding: 0;
+  }
+  .main-bar .search-button img {
+    left: 110px;
+    position: absolute;
+  }
+  .main-bar button {
+    width: 80px;
+  }
+  .main-bar .sign-bar-img {
+    top: 0;
   }
 
   .burger {
@@ -763,7 +778,7 @@ header {
     transform: scale(0);
   }
 
-  .logo img.active {
+  .main-logo a.active {
     color: #000000;
   }
 
@@ -797,25 +812,114 @@ header {
     border-bottom: 1px solid #F7F7F7;
   }
 
-  .main-bar .search-button {
-    margin: 0;
-    padding: 0;
+  .input-container-mobile {
+    position: relative;
+    display: inline;
   }
-  .main-bar button {
-    width: 80px;
+  .input-container-mobile .header-search {
+    padding: 10px 35px 10px 15px;
+    outline: none;
+    width: 584px;
+    height: 48px;
+    border-radius: 3px;
+    border: none;
+    background-position: right;
+    color: #FFFFFF;
+    background-color: rgba(247, 247, 247, 0.24);
+  }
+  .input-container-mobile .header-search::-moz-placeholder {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 17px;
+    line-height: 100%;
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .input-container-mobile .header-search:-ms-input-placeholder {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 17px;
+    line-height: 100%;
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .input-container-mobile .header-search::placeholder {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 17px;
+    line-height: 100%;
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .input-container-mobile .header-search::-moz-placeholder {
+    /* Firefox 19+ */
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 17px;
+    line-height: 100%;
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .input-container-mobile .header-search:-ms-input-placeholder {
+    /* IE 10+ */
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 17px;
+    line-height: 100%;
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .input-container-mobile .header-search:-moz-placeholder {
+    /* Firefox 18- */
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 17px;
+    line-height: 100%;
+    text-align: left;
+    vertical-align: top;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    opacity: 1;
   }
 
   .register-part {
     padding: 24px 16px;
   }
+  .register-part .register-input-part {
+    display: flex;
+  }
   .register-part input {
     margin-bottom: 0;
     margin-right: 8px;
   }
+
   #footer .ft-main {
     margin-bottom: 16px;
   }
   #footer .ft-social-list img {
     margin-right: 24px;
+  }
+
+  .container.act {
+    background-color: transparents;
+  }
+
+  .main-bar.act {
+    background-color: transparent;
   }
 }/*# sourceMappingURL=style.css.map */

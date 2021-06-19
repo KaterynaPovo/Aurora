@@ -6,6 +6,8 @@ $color-white: #FFFFFF;
 $color-black: #000000;
 $color-light-white: #F7F7F7;
 $color-gray: #4A4A4A;
+$color-light-yellow: #F2DA91;
+
 
 
 
@@ -43,6 +45,11 @@ body {
     font-size: 16px;
     font-weight: normal;
     color: $color-black;
+}
+
+.input-container-mobile,
+.submenu {
+    display: none;
 }
 
 .logo {
@@ -326,12 +333,12 @@ header {
       }
 }
 
-@keyframes slideBg {
-    50% {
-        background-image: url(../img/hp-oh-hi.png);
-    }
+// @keyframes slideBg {
+//     50% {
+//         background-image: url(../img/hp-oh-hi.png);
+//     }
     
-}
+// }
 
 
 .register-part{
@@ -508,30 +515,30 @@ header {
 
 //For the active page
 
-.container.active {
+.container.act {
     background-color: $color-white;
     padding-bottom: 15px;
 }
 
 //Top bar part
 
-.top-bar.active {
+.top-bar.act {
     background-color: $color-light-white;
 }
 
 //Main bar part
 
-.main-logo.active { 
+.main-logo.act { 
     a {
         color: $color-black;
     }
 }
 
-.sign-bar-link.active {
+.sign-bar-link.act {
     color: $color-black;
 }
 
-.header-search.active {
+.header-search.act {
     color:$color-white;
     background-color: $color-light-white;
     &::placeholder {
@@ -556,37 +563,38 @@ header {
       }
 }
 
-.search-button.active {
+.search-button.act {
     color: $color-white;
 }
 
-.sign-bar-link {
-    a {
-        top: -8px;
-    }
+.sign-bar-item{
+    .sign-bar-link {
+        
+}
     
     span {
         height: 22px;
         width: 22px;
-        background-color: #F2DA91;
+        background-color: $color-light-yellow;
         display: block;
         text-align: center;
         border-radius: 50%;
         font-weight: 600;
         font-size: 11px;
         vertical-align: center;
+        color: $color-black;
     }
 }
 
 
-.header-list-active {
+.header-list-act {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-    .header-item-active {
+    .header-item-act {
         margin-right: 32px;
-        .header-link-active {
+        .header-link-act {
             font-weight: 600;
             font-size: 13px;
             line-height: 20px;
@@ -617,7 +625,7 @@ header {
 }
 
 
-.intro.active {
+.intro.act {
     background-image: url(../img/hp-oh-hi.png);
 }
 
@@ -625,17 +633,49 @@ header {
 //For mobile screen
 
 @media screen and (max-width: 767px) {
-    .top-bar, .basket-card, .header-search, .intro-title, .ft-title, .main-bar h1, .sign-bar-link {
+    .top-bar, .basket-card, .intro-title, .ft-main-social h2, .header-search, .main-bar h1, .sign-bar-link {
         display: none;
     }
 
-    .logo {
-        display: block;
+    .submenu {
+        display: inline;
     }
+
+    // .logo {
+    //     display: block;
+    // }
 
     .intro {
         background-position: center;
     }
+
+    .main-bar {
+        .main-logo {
+            position: absolute;
+            left: 35%;
+            a{
+                font-size: 25px;
+                top: 0;
+            }
+        }
+        .search-button {
+            margin: 0;
+            padding: 0;
+            img {
+                left: 110px;
+                position: absolute;
+            }
+        }
+        button {
+            width: 80px;
+        }
+        
+        .sign-bar-img {
+            top: 0;
+        }
+    }
+
+
 
     .burger {
         display: block;
@@ -691,7 +731,7 @@ header {
         }
     }
 
-    .logo img.active {
+    .main-logo a.active {
         color: $color-black;
     }
 
@@ -727,31 +767,77 @@ header {
         }
     }
     
-
-    .main-bar {
-        .search-button {
-            margin: 0;
-            padding: 0;
+.input-container-mobile {
+        position: relative;
+        display: inline;
+    .header-search {
+        padding: 10px 35px 10px 15px;
+        outline: none;
+        width: 584px;
+        height: 48px;
+        border-radius: 3px;
+        border: none;
+        background-position: right;
+        color:$color-white;
+        background-color: rgb(247 247 247 / 24%);
+        &::placeholder {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
         }
-        button {
-            width: 80px;
-        }
-    }
-
-.register-part {
-    padding: 24px 16px; 
-    input {
-        
-        margin-bottom: 0;
-        margin-right: 8px;
-    }
-    button {
-        
+        &::-moz-placeholder { /* Firefox 19+ */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
+          }
+        &:-ms-input-placeholder { /* IE 10+ */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
+          }
+        &:-moz-placeholder { /* Firefox 18- */
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 17px;
+            line-height: 100%;
+            text-align: left;
+            vertical-align: top;
+            letter-spacing: 0.8px;
+            color: $color-white;
+            opacity: 1;
+          }
     }
 }
 
-
-
+.register-part {
+    padding: 24px 16px; 
+    .register-input-part {
+        display: flex;
+    }
+    input {  
+        margin-bottom: 0;
+        margin-right: 8px;
+    }
+    
+}
 
 #footer {
     .ft-main {
@@ -764,4 +850,15 @@ header {
         }
     }
 }
+
+//For the active page
+
+.container.act {
+    background-color: transparents;
+}
+
+.main-bar.act {
+    background-color: transparent;
+}
+
 }

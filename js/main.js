@@ -10,7 +10,7 @@
 
 $(document).ready(function() {
     $('.burger').click(function() {
-        $('.burger,.header-nav,.main-bar,.header-nav-active').toggleClass('active');
+        $('.burger,.header-nav,.header-nac-act,.main-logo a, .main-logo.act,.main-bar, .header-nav-active').toggleClass('active');
     });
 });
 

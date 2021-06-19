@@ -58,13 +58,34 @@
                 <span></span>
             </div>
 
+            <div class="input-container-mobile">
+                <input class="header-search" type="text" placeholder="What are you looking for?">
+                <button type="submit" class="search-button">
+                    <img src="./img/Fill 1 black.svg" alt="search">
+                </button>
+            </div>
+
             <nav class="header-nav">
                 <ul class="header-list">
                     <li class="header-item">
                         <a href="#" class="header-link">what’s new</a>
                     </li>
                     <li class="header-item">
-                        <a href="#" class="header-link">women</a>
+                        <a href="#" class="header-link" id="has-dropdown">women</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="#" class="submenu-link">clothing</a>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-link">collections</a>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-link">collabs</a>
+                            </li>
+                            <li>
+                                <a href="#" class="submenu-link">brands</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="header-item">
                         <a href="#" class="header-link">accessories</a>
@@ -95,8 +116,10 @@
         <div class="wrapper-one">
             <div class="register-part">
                 <p>New arrivals. Exclusive previews. First access to sales. Sign up to stay in the know.</p>
-                <input class="register-input" type="text" placeholder="Your email adress" name="email" id="email" required>
-                <button type="submit" class="register-btn">Register</button>
+                <div class="register-input-part">
+                    <input class="register-input" type="text" placeholder="Your email adress" name="email" id="email" required>
+                    <button type="submit" class="register-btn">Register</button>
+                </div>
             </div>
         </div>
     </main>
