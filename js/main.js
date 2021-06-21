@@ -1,20 +1,13 @@
-// $(document).ready(function() {
-//     var topOfDivScroll = $(".intro").offset().top - $(window).height();
-  
-//     $(window).scroll(function() {
-//       if ($(window).scrollTop() > topOfDivScroll) {
-//         $(".intro").hide();
-//       } else $(".header-nav").show();
-//     });
-//   });
+//Create the burger menu
 
 $(document).ready(function() {
     $('.burger').click(function() {
-        $('.burger,.header-nav,.header-nac-act,.main-logo a, .main-logo.act,.main-bar, .header-nav-active').toggleClass('active');
+        $('.burger,.header-nav,.header-nav-act,.main-logo a, .main-logo.act a,.main-bar, .register-input-part').toggleClass('active');
     });
 });
 
-//Change backgrond-image
+//Change backgraund-image
+
 (function($) {
     $(document).ready(function() {
         $("#main").hover(function() {
@@ -23,3 +16,45 @@ $(document).ready(function() {
       
         });
       })(jQuery);
+
+//For menu
+
+$('.ft-title').click(function(e) {
+    e.preventDefault();
+   
+     var $this = $(this);
+   
+     if ($this.next().hasClass('show')) {
+         $this.next().removeClass('show');
+         $this.next().slideUp(350);
+       $this.find('img').css( "transform", "rotate(0deg)");
+     } else {
+         $this.parent().parent().find('ft-main-list').removeClass('show');
+         $this.parent().parent().find('ft-main-list').slideUp(350);
+         $this.next().toggleClass('show');
+         $this.next().slideToggle(350);
+  $this.find('img').css( "transform", "rotate(90deg)");
+ 
+ 
+     }
+ });
+
+ $('.header-link, .header-link-act').click(function(e) {
+    e.preventDefault();
+   
+     var $this = $(this);
+   
+     if ($this.next().hasClass('show')) {
+         $this.next().removeClass('show');
+         $this.next().slideUp(350);
+       $this.find('img').css( "transform", "rotate(0deg)");
+     } else {
+         $this.parent().parent().find('header-item, header-item-act').removeClass('show');
+         $this.parent().parent().find('header-item, header-item-act').slideUp(350);
+         $this.next().toggleClass('show');
+         $this.next().slideToggle(350);
+  $this.find('img').css( "transform", "rotate(90deg)");
+ 
+ 
+     }
+ });
