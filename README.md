@@ -1,5 +1,5 @@
 **1. About The Project**   
-Page for the online-store Aurora (test task for the trainee position).
+Page for the online-store Aurora
 
 **2. Built With:**   
 HTML;
